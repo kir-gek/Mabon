@@ -7,14 +7,20 @@ export default class ArtistStore {
     private _artists: artistModel[] | null = exampleArtists
     private _selectedArtist: artistModel | null = null
     private _pictures: pictureModel[] | null = examplePicturesState
+    private _selectedPictures: pictureModel[] | null = null
 
     rootStore: RootStore;
     constructor(rootStore: RootStore) {
         this.rootStore = rootStore;
         makeAutoObservable(this)
     }
-    setSelectedArtist(selectedArtist: artistModel) {
-        this._selectedArtist = selectedArtist
+    setSelectedArtist(numericId: number) {
+        if (!this._artists) {
+            this._selectedArtist = null;
+            return;
+        }
+        this._selectedArtist = this._artists.find((artist: artistModel) => artist.id === numericId) || null;
+        this._selectedPictures = this._pictures?.filter((picture: pictureModel) => picture.atristId === numericId) || null;
     }
     resetSelectedArtist() {
         this._selectedArtist = null
@@ -27,5 +33,8 @@ export default class ArtistStore {
     }
     get pictures() {
         return this._pictures
+    }
+    get selectedPictures() {
+        return this._selectedPictures
     }
 }

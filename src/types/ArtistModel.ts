@@ -7,7 +7,7 @@ export interface artistModel {
 
 export interface pictureModel {
     id: number;
-    atrist: artistModel
+    atristId: number
     title: string;
     price: number;
     img: string | null;

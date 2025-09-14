@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { useRootStore } from "../store/useStores";
 import { useEffect, useState } from "react";
-import type { pictureModel } from "../types/ArtistModel";
 
 export const Artist: React.FC = observer(() => {
   const { id } = useParams<{ id: string }>();
@@ -102,4 +101,7 @@ export const Artist: React.FC = observer(() => {
       </div>
     </div>
   );
+
+
+  
 });

@@ -29,7 +29,7 @@ export default class BasketStore {
     }
 
     removeFromBasket(id: number) {
-        this._picturesInBasket?.filter((picture) => (picture.id != id))
+        this._picturesInBasket= this._picturesInBasket?.filter((picture) => (picture.id != id))
     }
 
     get picturesInBasket() {

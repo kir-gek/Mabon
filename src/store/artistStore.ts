@@ -4,10 +4,10 @@ import { exampleArtists, examplePicturesState } from "./examplesState";
 import type { RootStore } from "./rootStore";
 
 export default class ArtistStore {
-    private _artists: artistModel[] | null = exampleArtists
+    private _artists: artistModel[]  = exampleArtists
     private _selectedArtist: artistModel | null = null
-    private _pictures: pictureModel[] | null = examplePicturesState
-    private _selectedPictures: pictureModel[] | null = null
+    private _pictures: pictureModel[]  = examplePicturesState
+    private _selectedPictures: pictureModel[]  = []
 
     rootStore: RootStore;
     constructor(rootStore: RootStore) {
